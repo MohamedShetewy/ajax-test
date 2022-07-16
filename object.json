@@ -1,0 +1,27 @@
+[
+    {
+        "username" :"mohamed",
+        "age" : 25
+    },
+    {
+        "username" :"Ali",
+        "age" : 12
+    },
+    {
+        "username" :"Alaa",
+        "age" : 20
+    },
+    {
+        "username" :"samir",
+        "age" : 15
+    },
+    {
+        "username" :"Ahmed",
+        "age" : 30
+    },
+    {
+        "username" :"fawzy",
+        "age" : 29
+    }
+
+]

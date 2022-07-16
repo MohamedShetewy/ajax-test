@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax</title>
+</head>
+<body>
+<input type="text" class="my-comment">
+<button >Get info</button>
+
+<div id="show"></div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+  $(function(){
+    $('button').on('click',function(){
+      $.ajax({
+        method:'Post',
+        // cache:false, //Cashe the request, Default True
+        // async:true,
+        //timeout :3000, // timeout for request
+        //dataType :'html', //data expected from the server response
+        //username:'',
+        //password:'',
+        //contentType:'application/x-www-form-urlencoded', //default application/x-www-form-urlencoded
+        url:'comments.php',
+        data:{comment : $('.my-comment').val()},
+        beforeSend:function(xhr){
+          console.log("Before Send");
+        },
+        success : function(data,status,xhr){
+          console.log(data);
+          $('#show').html(data);
+        },
+        error : function(xhr,status,error){
+          console.log(error);
+        },
+        complete :function(xhr,status){
+          console.log(xhr);
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

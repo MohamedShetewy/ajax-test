@@ -1,0 +1,8 @@
+CREATE DATABASE storedb CHARACTER SET utf8 COLLATE utf8_general_ci
+==============================
+create table app_users ( UserId int unsigned PRIMARY key AUTO_INCREMENT, Username varchar(12) NOT NULL,Password char(60) NOT NULL, Email varchar(40) NOT NULL,
+                        PhoneNumber varchar(15),SubscriptionDate date NOT NULL,LastLogin datetime NOT NULL,Privilege tinyint(1) NOT NULL);
+=======================================
+ALTER Table app_users modify Username varchar(12) not null unique;
+=====================================
+alter table app_users add FOREIGN KEY (GroupId) REFERENCES app_users_groups (GroupId);

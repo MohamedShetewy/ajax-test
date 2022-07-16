@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+<body>
+    <input type="text" class="my-comment">
+    <button >Get info</button>
+
+    <div id="show"></div>
+ <script src="jquery-3.2.1.min.js"></script>
+ <script>
+    $(function(){
+        $('button').on('click',function(){
+            $.ajax({
+                method:'POST',
+               // cache:false, //Cashe the request, Default True
+               // async:true,
+               //timeout :3000, // timeout for request
+               //dataType :'html', //data expected from the server response
+               //username:'',
+               //password:'',
+               //contentType:'application/x-www-form-urlencoded', //default application/x-www-form-urlencoded
+                url:'https://graph.facebook.com/v12.0/108562701915916/messages?access_token=EABOvYfMXZCIYBAGWOSEVgEnWN5HgACi5SdqxXgPsb7hs6eOJNZCni9TDgp51ayJj2RMUl1oZAwItTCd8cxr5zIAZBnlE0wYBUtxvvvSSvUUBR1RjPEtiMZAJfXDKXGSJi2i1RIuLNszx8HoMWVy0fVq6FfYW3eJpTGUKIrOpHMj50mZATsCWN3Ue5DDi7WU090DfJZCJGQpUJ42vtjiBzg2JFyCOMy37ZC4ZD',
+                data:{
+                    messaging_product: "whatsapp",
+                    to: 201017987421,
+                    text: { body: "test" },
+                },
+                headers: { "Content-Type": "application/json" },
+
+                beforeSend:function(xhr){
+                    console.log("Before Send");
+                },
+                success : function(data,status,xhr){
+                    console.log(data);
+                    $('#show').html(data);
+                },
+                error : function(xhr,status,error){
+                    console.log(error);
+                },
+                complete :function(xhr,status){
+                    console.log(xhr);
+                }
+            });
+        });
+    });
+ </script>
+</body>
+</html>

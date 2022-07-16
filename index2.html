@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+<body>
+    <button data-page="doc-one.html">Get doc one</button>
+    <button data-page="doc-two.html">Get doc two</button>
+    <div id="show"></div>
+ <script src="jquery-3.2.1.min.js"></script> 
+ <script>
+    $(function(){
+        // $('#show').load('doc-one.html .test',function(resTxt,stTxt,xhr){
+        //     console.log(resTxt);
+        //     console.log(stTxt);
+        //     console.log(xhr);
+        // });
+
+        $('button').on('click',function(){
+            $('#show').load($(this).data('page') + ' .test',function(resTxt,stTxt,xhr){
+         });
+        });        
+    });
+ </script>  
+</body>
+</html>

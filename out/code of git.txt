@@ -1,0 +1,80 @@
+>git clone https://github.com/MohamedShetewy/git_course.git  //هيجيب كل الملفات الى على ريبوا هينزلها فى لوكل 
+>git status //معلومات عن حاله الملفات لو فى ملفات جديده او فى استيج 
+>git add index.htm //بضيف الملف فى stagy
+>git add * //بضيف كل حاجه
+>git reset head mohamed.docx //بحذف ملف محمد من stagy
+>git restore --staged new3.txt //بحذف الملف من الستيج
+>git restore --staged *
+
+>git commit -m "project st"  //بعمل commit 
+>git branch // بتعرفنى اسم برانش 
+>git remote -v // بتعرفنلا اسم ريموت
+git push RemoteName BranshName
+>git push origin main  // عمل push
+>git pull origin
+
+======
+>git config -l
+>git help config
+>git config --global user.name
+>git config --global user.name "MohamedShetewy"
+============================================
+>git init
+>git remote add origin https://github.com/MohamedShetewy/course.git
+==========================
+>git config --global alias.st status
+>git config --global alias.cm "commit -m"
+=======================
+>git branch scroll //create new branch name is scroll
+>git checkout scroll // Switched to branch 'scroll'
+>git branch -d scroll // delete branch scroll
+===
+>git checkout -b scroll-dev // create and Switch in singlr line
+>git branch -m develpment   // rename branch
+>git merge develpment  //نقل من برانش لاخر
+======================
+>git stash // تاخد الملف اتعمل له ادد وتخبيه
+>git stash save "this file test" //بتحفظ الملفات الى فى ادد وتكتب جنبها معلومات عنها
+
+>git stash list // بيظهرلى لو فى ملفات مخفيه
+>git stash pop // بيرجع اخر ملف تانى
+>git stash apply //بيرجع اخر ملف ولكن بيسيبه فى مخباء
+
+>git stash pop stash@{2} //و عاوز ارجع ملف معين
+
+>git stash drop stash@{1} //دا كدا بيحذف ملف معين بلحجات الى فيه
+
+>git stash show //بيعرض لى اخر استاش الملفات ال فيه
+>git stash clear //بتحذف كل الستاش الى موجود
+
+=================================
+>git clean -n
+>git clean -f
+// لحذف الملفات
+=========================
+//لحذف commit
+>git log
+>git reset --hard 267186a7c05e1c02e4a7b500ad06d9eb8c58ee82
+>git push origin master --force
+=====================
+gitignore
+
+لو عاوز استسنى فيل او ملفات بعمل ملف باسم 
+.gitignore
+وبحط فيها اسماء الى مش عوزها تتحط فى git
+*.log
+!vip.log
+mo.txt
+fo_m/
+===============================
+git tag
+git tag -l
+git tag v1.0
+git push origin v1.0
+
+------
+git tage -a v2.0 -m "this tag"
+----------
+git tag -d v1.0
+git push origin --delete v1.0
+
